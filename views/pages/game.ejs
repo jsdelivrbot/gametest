@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Campaign Quest!</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    
+      <% include /js/game_v04.js %>
+      <% include js/values_v04.js %>
+      <% include js/message_v04.js %>
+    
+</head>
+
+<body>
+    <div class="grid">
+        <div class="row">
+            <div class="container col-sm-4">
+                <h1>Campaign Quest!</h1>
+                <h2>The goal is to reach 50% by election day. Good Luck!</h2>
+                <h2 id="narrative">Press "Start!" to begin.</h2>
+                <table class="table table-sm table-bordered" id="results-table">
+                    <tbody>
+                        <tr>
+                            <td>Polling:</td>
+                            <td id='polling-value'></td>
+                        </tr>
+                        <tr>
+                            <td>Funds:</td>
+                            <td id='funds-value'></td>
+                        </tr>
+                        <tr>
+                            <td>Days to Election:</td>
+                            <td id='days-remaining-value'></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div id="div-space" class="container col-sm-4">
+                <input id="start-button"      type="button" class="btn btn-default" value="Start!"     onclick="newGame()" />
+                <input id="canvas-button"     type="button" class="btn btn-default" value="Canvas!"    onclick="game.canvas()" />
+                <input id="fundraise-button"  type="button" class="btn btn-default" value="Fundraise!" onclick="game.fundraise()"/>
+                <input id="advertise-button"  type="button" class="btn btn-default" value="Advertise!" onclick="game.advertise()" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="container col-sm-4">
+                <p id="message"></p>
+            </div>
+        </div>
+    </div>
+    <% include js/initialize_v04.js %>
+</body>
+
+</html>
